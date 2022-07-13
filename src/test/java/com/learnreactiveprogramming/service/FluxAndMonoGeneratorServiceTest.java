@@ -22,4 +22,18 @@ public class FluxAndMonoGeneratorServiceTest {
             .expectNextCount(2)
             .verifyComplete();
     }
+
+    @Test
+    void nameMono() {
+        //given
+
+        //when
+        var nameMono = fluxAndMonoGeneratorService.nameMono();
+
+        //then
+        StepVerifier.create(nameMono)
+            .expectNext("alex")
+            //.expectNextCount(1)
+            .verifyComplete();
+    }
 }
